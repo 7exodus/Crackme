@@ -1,0 +1,68 @@
+
+First Method: Graphical Analysis in IDA
+Load the Executable into IDA
+
+Drag the .exe file into the IDA window and wait for the disassembly process to complete.
+
+Identify the Program Logic
+
+Once the file is disassembled, check the small text box at the beginning of the graph view. Look for connections between blocks, indicated by red lines.
+
+For example, you might see a conditional jump instruction like:
+
+assembly
+jz      short loc_1400013C3  ; Jump if Equal or Zero
+This indicates a decision point in the program.
+
+Analyze the Conditional Logic
+
+Follow the connections to identify an IF-ELSE structure.
+
+In the IF block, you might find a line like:
+
+assembly
+lea     rdx, aFlagN1c3J0bSt8 ; "Flag{n1c3-j0b-st8d3nt}"  
+This suggests that the program prints a success message if the condition is met.
+
+In the ELSE block, you might see:
+
+assembly
+lea     rdx, aUCanDoBetterNe ; "u can do better next time"  
+This indicates a failure message.
+
+Determine the Correct Password
+
+Based on the analysis, the correct password is ->
+
+Flag{n1c3-j0b-st8d3nt}
+Second Method: Pseudocode Analysis in IDA
+Load the Executable into IDA
+
+Drag the .exe file into the IDA window and wait for the disassembly process to complete.
+
+Generate Pseudocode
+
+Navigate to the main function and press F5 to generate the pseudocode. This provides a higher-level, more readable representation of the program's logic.
+
+Rename Variables and Functions (Optional)
+
+You can rename variables and functions for better clarity by right-clicking on them and selecting Rename.
+
+Analyze the Pseudocode
+
+Look for conditional statements. For example ->
+
+if (_Str._Mypair._Myval2._Mysize == 22 && !memcmp_0(p_Str, "Flag{n1c3-j0b-st8d3nt}", 0x16uLL)) {
+    system("timeout /3");
+    system("cls");
+    std::operator<<<std::char_traits<char>>(std::cout, "I'm glad you've gained more experience");
+    system("timeout /t 1");
+} else {
+    std::operator<<<std::char_traits<char>>(std::cout, "u can do better next time");
+}
+This code checks if the input string matches "Flag{n1c3-j0b-st8d3nt}" and has a length of 22 characters. If the condition is met, it displays a success message; otherwise, it displays a failure message.
+
+Determine the Correct Password
+
+Based on the pseudocode, the correct password is ->
+Flag{n1c3-j0b-st8d3nt}
