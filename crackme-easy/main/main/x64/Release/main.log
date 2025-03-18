@@ -1,0 +1,6 @@
+﻿  main.cpp
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 111 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  main.vcxproj -> C:\Users\1337\Downloads\crackme-easy\main\x64\Release\main.exe
